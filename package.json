@@ -15,5 +15,8 @@
   "homepage": "https://github.com/mysun218/wetube-clone-2020#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
