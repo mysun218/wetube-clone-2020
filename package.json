@@ -1,0 +1,19 @@
+{
+  "name": "wetube-clone-2020",
+  "version": "1.0.0",
+  "description": "Cloning Youtube with Vanilla and NodeJS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mysun218/wetube-clone-2020.git"
+  },
+  "author": "SeongUn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mysun218/wetube-clone-2020/issues"
+  },
+  "homepage": "https://github.com/mysun218/wetube-clone-2020#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
