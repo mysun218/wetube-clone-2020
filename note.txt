@@ -1,0 +1,75 @@
+html tags mdn
+
+
+@keyframes {
+	0% {}
+	50% {}
+	100% {}
+}
+
+keyframes mdn
+
+
+@media print {}
+
+
+media query mdn
+
+
+
+span은 display block을 해주어야지 margin 갖일 수 있다.
+
+position: absolute  하면 모든 tag위에 올라감.
+
+
+branch를 만들어 줘야 git에서 내가 만든 웹사이트를 무료로 publish하게 해줌. branch이름은 gh-pages라고 해야함.
+html,css,javascript로 이루어진 웹페이지만 가능.
+그리고 웹페이지 업데이트할 경우에는 master branch에서 수정 후 commit 과 push 해준 후에 다시 gh-pages로 변경 후
+메뉴의 branch의 update from master를 클릭 후 push 해주면 됨.
+
+
+
+
+
+npm install nodemon -D 를 통해 nodemon을 설치해준 후 웹서버를 실행 하기 위한 npm start의 접근 부분에 
+nodemon --exec을 맨 앞에 추가해준다면 내가 코드를 변경하고 저장 시킬때마다 자동으로 서버를 새로 열어준다.
+
+babel을 통해 env를 설치하면 ES6를 사용가능하게 해 javascript코드를 ES6버전으로 쓸 수 있게해주어서
+예를 들어
+function system (req,res) { send.("Hi!"); }
+를
+const system = (req,res) => send.("Hi!"); 로 바꾸어 쓸 수 있게된다.
+
+
+
+package.json의 scripts 내의 요소에 마지막에 --delay 숫자 를 넣으면 입력한 숫자만큼 delay 된다.
+
+
+middelware를 통해 예를 들면 로그인 여부를 확인하거나 파일을 전송할 떄 중간에서 가로챌 수도 있다, ip접속 차단가능
+
+만드는 방법.
+const handleHome = (req,res) => {}
+const betweenHome = (req,res,next) => { console.log("Between"); next() }
+app.get("/",betweenHome,handleHome);             //이 경우 betweenHome이 middleware이다. next를 추가 함으로써 다음 handleHome으로 넘어갈 수 있음.
+
+혹은. 모든 경로에 middleware를 넣는 방법은
+
+함수를 여러개 만들어 주고 
+app.use(betweenHome);		//middleware
+app.get("/",handleHome);		//webpase route
+app.get("/profile",handleProfile);	//webpase route
+app.listen(PORT,handleListening);	//포트연결
+
+미들웨어는 여러개 만들어 넣을 수 있다. 순서 중요! 미들웨어 다 넣고 route나와야함.
+
+밑의 애들은 express의 middleware이다.
+morgan 설치 -> logging기능 = 무슨 일이 어디서 일어났는지를 기록.
+helmet 설치 -> 보안의 기능
+body-parser 설치 -> body로 부터의 정보를 얻음.
+cookie-parser 설치 -> cookie에 유저 정보 저장.
+
+
+app.js에서 맨 마지막 줄에 export default app;이라 적고
+init.js에서 맨위에 import app from "./app"; 이라 하면 app.js에서 설정해준 것들 사용가능.  // ./app에서 app은 app.js의 명칭의 app
+만약 변수에 바로 export const 뭐시기 하면 이걸 사용하려는 .js에서는 import {} from ""을 해주어야 하고
+문서 전체를 하는 export default 뭐시기를 하면 import 문서의 변수명 from ""해주면 된다.
