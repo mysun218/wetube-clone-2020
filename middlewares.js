@@ -1,4 +1,7 @@
+import multer from "multer";
 import routes from "./routes";
+
+const multerVideo = multer({ dest: "uploads/videos/" });
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube"; //locals에 siteName추가.  locals에 로컬 변수를 저장하면 이 변수를 템플릿에서 사용 가능.
@@ -9,3 +12,5 @@ export const localsMiddleware = (req, res, next) => {
   };
   next(); //다음 함수로 넘어간다는 뜻.
 };
+
+export const uploadVideo = multerVideo.single("videoFile");

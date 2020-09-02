@@ -13,6 +13,7 @@ const app = express();
 
 app.use(helmet());
 app.set("view engine", "pug"); //pug설치 후 이걸 적어야함.
+app.use("/uploads", express.static("uploads")); //directory에서 file을 보내주는 middleware
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

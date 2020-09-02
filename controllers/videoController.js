@@ -1,8 +1,14 @@
-import { videos } from "../db";
 import routes from "../routes";
+import Video from "../models/Video";
 
-export const home = (req, res) => {
-  res.render("home", { pageTitle: "Home", videos }); //render함수의 첫번째 인자는 템플릿 두번째 인자는 템플릿에 추가할 정보가 담긴 객체
+export const home = async (req, res) => {
+  try {
+    const videos = await Video.find({}); //await는 async를 써야만 쓸 수 있고, 이걸 쓰면 이걸 완료 후 뒤에 가 실행된다.
+    res.render("home", { pageTitle: "Home", videos }); //render함수의 첫번째 인자는 템플릿 두번째 인자는 템플릿에 추가할 정보가 담긴 객체
+  } catch (error) {
+    console.log(error);
+    res.render("home", { pageTitle: "Home", videos: [] });
+  }
 }; //import한 videos를 home화면에 전달.
 export const search = (req, res) => {
   const {
@@ -12,11 +18,17 @@ export const search = (req, res) => {
 };
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
-export const postUpload = (req, res) => {
+export const postUpload = async (req, res) => {
   const {
-    body: { file, title, descriiption },
+    body: { title, descriiption },
+    file: { path },
   } = req; //upload and save video
-  res.redirect(routes.videoDetail(32145));
+  const newVideo = await Video.create({
+    fileUrl: path,
+    title,
+    descriiption,
+  });
+  res.redirect(routes.videoDetail(newVideo.id));
 };
 export const videoDetail = (req, res) =>
   res.render("videoDetail", { pageTitle: "Video Detail" });
