@@ -97,3 +97,5 @@ mongodb 설치 -> 환경변수 설정 -> mongoose설치(npm install mongoose) //
 .env파일을 만든 후 사용하고자 하는곳에 import dotenv form "dotenv"; dotenv.config();해주고   process.env.인자   를 써서 사용하면 된다.
 
 multer설치 (npm install multer) //upload시 url반환하기 위해서
+
+console.log(req.params);를 통해 routes에서 정의했던 URL정보를 보여준다.
