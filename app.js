@@ -13,7 +13,8 @@ const app = express();
 
 app.use(helmet());
 app.set("view engine", "pug"); //pug설치 후 이걸 적어야함.
-app.use("/uploads", express.static("uploads")); //directory에서 file을 보내주는 middleware
+app.use("/uploads", express.static("uploads")); //directory에서 file을 보내주는 middleware 여기서는 현재 video파일들을 보내줌. 이 일을 나중에는 amazon에서 하게 될것.
+app.use("/static", express.static("static"));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

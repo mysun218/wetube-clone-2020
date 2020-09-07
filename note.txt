@@ -99,3 +99,25 @@ mongodb 설치 -> 환경변수 설정 -> mongoose설치(npm install mongoose) //
 multer설치 (npm install multer) //upload시 url반환하기 위해서
 
 console.log(req.params);를 통해 routes에서 정의했던 URL정보를 보여준다.
+
+eslint 설치 (npm install eslint -g) //여기서 -g는 package를 global 하게 설치한다는 것.
+-> eslint -D로 설치할것 안하면 에러. //local하게 설치.
+
+1. eslint // JS 문제 감지 모듈
+2. prettier // 코드 정리 모듈
+3. eslint-plugin-prettier // prettier를 eslint 규칙으로 실행 시켜 주는 모듈
+4. eslint-config-prettier // prettier와 eslint의 충돌점을 보완해주는 모듈
+모두 설치 -> local하게 설치 => -D
+
+regular expression은 string으로부터 무언가를 가져오는것.
+
+
+아래 둘다 설치 // webpack은 많은 파일들을 가져와서 넘겨주면 webpack이 그것들을 완전히 호환 되는 static파일로 변환 해서 줌.
+webpack 파일에서 webpack사용가능하게 해줌
+webpack-cli 터미널에서 webpack사용가능하게 해줌.
+
+cross-env설치 //MacOS/Linux와 Windows는 환경변수를 설정하는 방법이 다른데, OS의 이러한 상황과 관계 없이 설정하기 위해 사용합니다.
+
+
+Uncaught EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive:
+라는 에러 발생시 webpack.config.js의 config에 devtool: "cheap-module-source-map"을 넣어 주면 오류 해결됨.
