@@ -121,3 +121,5 @@ cross-env설치 //MacOS/Linux와 Windows는 환경변수를 설정하는 방법�
 
 Uncaught EvalError: Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive:
 라는 에러 발생시 webpack.config.js의 config에 devtool: "cheap-module-source-map"을 넣어 주면 오류 해결됨.
+
+ grid-template-columns: repeat(3, 1fr); 를 쓰면 명시적 열의 크기를 정의해준다. 이 경우 한줄에 올수 있는 column수를 세개로 하겠다는것.
