@@ -123,3 +123,16 @@ Uncaught EvalError: Refused to evaluate a string as JavaScript because 'unsafe-e
 라는 에러 발생시 webpack.config.js의 config에 devtool: "cheap-module-source-map"을 넣어 주면 오류 해결됨.
 
  grid-template-columns: repeat(3, 1fr); 를 쓰면 명시적 열의 크기를 정의해준다. 이 경우 한줄에 올수 있는 column수를 세개로 하겠다는것.
+
+Passport 사용 => 사용자 인증을 위한 미들웨어
+passoprt-local-mongoose =>사용자 기능을 추가(npm install passoprt-local-mongoose)
+passport-local => username,password를 쓰는 사용자 인증 방식을 의미. (npm i passport passport-local)
+
+serializeUser => 쿠키에 어떤 정보를 줄지를 정함.
+deserializeUser => 어느 사용자인지 어떻게 찾는가를 뜻함. 쿠키의 정보를 어떻게 사용자로 전환하는가를 의미.
+
+express-session => session을 관리해주기 위해 필요한 것.(npm install express-session)
+session의 secret => 쿠키에 들어있는 sesison ID를 암호화 하기 위한 것.
+
+connect-mongo => 저장소를 생성.(npm i connect-mongo)
+passport-github => github 인증을 통한 로그인 가능하게 해줌.(npm install passport-github)
