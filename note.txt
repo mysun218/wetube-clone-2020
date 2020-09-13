@@ -136,3 +136,11 @@ session의 secret => 쿠키에 들어있는 sesison ID를 암호화 하기 위�
 
 connect-mongo => 저장소를 생성.(npm i connect-mongo)
 passport-github => github 인증을 통한 로그인 가능하게 해줌.(npm install passport-github)
+
+//passportjs.org에서 확인!
+//facebook-login 인증
+developers.facebook.com으로 가서 애플리케이션 등록->
+npm i passport-facebook을 통해 설치
+developers.facebook.com의 기본설정에서 앱id,secret을 복사해서 .env에 저장.
+
+localtunnel은 http였던것에 https터널을 만들어준다 //테스트 하기위해 사용하는 거지 실제로 만들때는 사용X (It --port 4000를 사용)
