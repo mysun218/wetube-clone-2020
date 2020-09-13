@@ -114,8 +114,9 @@ export const userDetail = async (req, res) => {
   }
 };
 
-export const getEditProfile = (req, res) =>
+export const getEditProfile = (req, res) => {
   res.render("editProfile", { pageTitle: "Edit Profile" });
+};
 
 export const postEditProfile = async (req, res) => {
   const {
@@ -123,7 +124,8 @@ export const postEditProfile = async (req, res) => {
     file
   } = req;
   try {
-    await User.findByIdAndUpdate(req.user.id, {
+    console.log(req.user);
+    await User.findByIdAndUpdate(req.user._id, {
       name,
       email,
       avatarUrl: file ? file.path : req.user.avatarUrl

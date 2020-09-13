@@ -144,3 +144,4 @@ npm i passport-facebook을 통해 설치
 developers.facebook.com의 기본설정에서 앱id,secret을 복사해서 .env에 저장.
 
 localtunnel은 http였던것에 https터널을 만들어준다 //테스트 하기위해 사용하는 거지 실제로 만들때는 사용X (It --port 4000를 사용)
+
